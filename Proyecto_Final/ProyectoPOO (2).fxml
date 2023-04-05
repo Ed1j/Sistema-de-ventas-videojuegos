@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: rgb(250, 235, 215);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.juegos.PrimaryController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="780.0" minWidth="0.0" prefWidth="438.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="780.0" minWidth="10.0" prefWidth="282.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="780.0" minWidth="0.0" prefWidth="290.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <VBox prefHeight="580.0" prefWidth="555.0">
+         <children>
+            <Label alignment="TOP_LEFT" contentDisplay="CENTER" prefHeight="25.0" prefWidth="535.0" text="Catalogo de Videojuegos" textFill="BLUE" textOverrun="CLIP" underline="true">
+               <font>
+                  <Font name="Century Gothic Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="15.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <ComboBox fx:id="cboxFiltro" onAction="#cboxFiltro_Change" prefWidth="120.0" promptText="Plataforma">
+               <VBox.margin>
+                  <Insets left="360.0" top="-25.0" />
+               </VBox.margin>
+            </ComboBox>
+            <ToggleButton fx:id="btnVerTodo" mnemonicParsing="false" onAction="#btnVerTodo_click" style="-fx-background-color: rgb(0, 0, 139);" text="Ver todo" textFill="WHITE">
+               <VBox.margin>
+                  <Insets left="280.0" top="-25.0" />
+               </VBox.margin>
+            </ToggleButton>
+            <ListView fx:id="ListView_ListaJuegos" prefHeight="340.0" prefWidth="510.0">
+               <VBox.margin>
+                  <Insets left="15.0" right="15.0" top="20.0" />
+               </VBox.margin>
+            </ListView>
+            <Label text="&quot;Juego que  eliminas de la lista&quot;" textFill="#125b75" textOverrun="CLIP" underline="true">
+               <font>
+                  <Font name="Century Gothic Bold Italic" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="15.0" top="8.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="txtfield_eliminar" promptText="Titulo del juego ">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="15.0" right="15.0" top="5.0" />
+               </VBox.margin>
+            </TextField>
+            <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#btnEliminar_click" style="-fx-background-color: rgb(0, 0, 139);" text="Eliminar" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="15.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <VBox prefHeight="580.0" prefWidth="350.0" GridPane.columnIndex="2">
+         <children>
+            <Button fx:id="btnAyuda" mnemonicParsing="false" onAction="#btnAyuda_click" prefHeight="17.0" prefWidth="18.0" style="-fx-background-radius: 30px; -fx-background-color: rgb(30, 144, 255);" text="?" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="310.0" top="3.0" />
+               </VBox.margin>
+            </Button>
+            <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="&quot;Agrega tu Videojuego&quot;" textAlignment="CENTER" textFill="#125b75" textOverrun="CLIP" underline="true">
+               <font>
+                  <Font name="Century Gothic Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="60.0" top="20.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="Titulo" textAlignment="CENTER" textOverrun="CLIP">
+               <VBox.margin>
+                  <Insets left="10.0" top="25.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Arial Bold Italic" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtfield_Titulo" promptText="Titulo del Videojuego">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="Año" textOverrun="CLIP">
+               <font>
+                  <Font name="Arial Bold Italic" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" top="8.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="txtfield_Anio" promptText="Año de publicacion">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="Desarrollador" textOverrun="CLIP">
+               <font>
+                  <Font name="Arial Bold Italic" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" top="8.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="txtfield_Desarrollador" promptText="Compañia que desarrollo el juego">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="Codigo del videojuego" textOverrun="CLIP">
+               <font>
+                  <Font name="Arial Bold Italic" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" top="8.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="txtfield_Codigo">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="Plataforma" textOverrun="CLIP">
+               <font>
+                  <Font name="Arial Bold Italic" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" top="8.0" />
+               </VBox.margin>
+            </Label>
+            <ComboBox fx:id="cboxPlataforma" onAction="#cboxPlataforma" prefHeight="31.0" prefWidth="204.0" promptText="Elegir plataforma">
+               <VBox.margin>
+                  <Insets left="10.0" right="145.0" top="5.0" />
+               </VBox.margin>
+            </ComboBox>
+            <Label text="Reseña">
+               <effect>
+                  <Blend />
+               </effect>
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" top="8.0" />
+               </VBox.margin>
+            </Label>
+            <TextArea fx:id="txtfield_Resena" prefHeight="65.0" prefWidth="319.0">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </TextArea>
+            <Button fx:id="btnAgregar" mnemonicParsing="false" onAction="#btnAgregar_click" style="-fx-background-color: rgb(0, 0, 139);" text="Agregar" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="105.0" top="25.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+         <children>
+            <Label text="Titulo seleccionado" textFill="#320ed3" underline="true">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" top="50.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="Titulo_Seleccion" prefHeight="30.0" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </TextField>
+            <ToggleButton fx:id="btnDetalles" mnemonicParsing="false" onAction="#btnDetalles_click" style="-fx-background-color: rgb(0, 0, 139);" text="Ver detalles" textFill="WHITE">
+               <VBox.margin>
+                  <Insets left="140.0" top="5.0" />
+               </VBox.margin>
+            </ToggleButton>
+            <Label text="Titulo">
+               <effect>
+                  <Blend />
+               </effect>
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" top="8.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="Titulo_Actualizar" editable="false" prefHeight="25.0" prefWidth="15.0">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="Año">
+               <effect>
+                  <Blend />
+               </effect>
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" top="8.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="Anio_Actualizar" editable="false">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="Desarrolador">
+               <effect>
+                  <Blend />
+               </effect>
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="8.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="Desarrollador_Actualizar" editable="false">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="Codigo del videojuego">
+               <effect>
+                  <Blend />
+               </effect>
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" top="8.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="Codigo_Actualizar" editable="false">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="Plataforma">
+               <effect>
+                  <Blend />
+               </effect>
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="Plataforma_Actualizar" editable="false">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="Reseña">
+               <effect>
+                  <Blend />
+               </effect>
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" top="8.0" />
+               </VBox.margin>
+            </Label>
+            <TextArea fx:id="Resena_Actualizar" prefHeight="65.0" prefWidth="319.0">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </TextArea>
+            <ToggleButton fx:id="btnActualizar" mnemonicParsing="false" onAction="#btnActualizar_click" style="-fx-background-color: rgb(0, 0, 139);" text="Actualizar" textFill="WHITE">
+               <VBox.margin>
+                  <Insets left="140.0" top="5.0" />
+               </VBox.margin>
+            </ToggleButton>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</GridPane>
